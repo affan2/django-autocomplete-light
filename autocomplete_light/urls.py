@@ -14,7 +14,7 @@ except ImportError:
 
 from django.views.generic.base import TemplateView
 
-from .views import AutocompleteView, RegistryView
+from autocomplete_light.views import AutocompleteView, RegistryView
 
 
 urlpatterns = patterns('',

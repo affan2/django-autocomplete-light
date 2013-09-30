@@ -1,7 +1,7 @@
 from django.contrib.contenttypes.models import ContentType
 from django.db.models import Q
 
-from autocomplete_light.generic import GenericModelChoiceField
+from ..generic import GenericModelChoiceField
 
 from .model import AutocompleteModel
 
