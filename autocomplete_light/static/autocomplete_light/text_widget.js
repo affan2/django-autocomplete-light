@@ -132,7 +132,7 @@ yourlabs.TextWidget.prototype.selectChoice = function(choice) {
     newValue += choiceValue;
     newValue += inputValue.substring(positions[1]);
 
-    this.input.val(newValue);
+    this.input.val($('<div/>').html(newValue).text());
     this.input.focus();
 }
 
