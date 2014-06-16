@@ -176,6 +176,8 @@ INSTALLED_APPS = (
     'support_sandino',
     'default_template_autocomplete',
     'ajax_create',
+    'taggit',
+    'taggit_autocomplete',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -215,3 +217,5 @@ LOGGING = {
         },
     }
 }
+
+TEST_RUNNER = 'django.test.simple.DjangoTestSuiteRunner'
