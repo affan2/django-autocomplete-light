@@ -154,7 +154,7 @@ yourlabs.TextWidget.prototype.initialize = function() {
 // Destroy the widget. Takes a widget element because a cloned widget element
 // will be dirty, ie. have wrong .input and .widget properties.
 yourlabs.TextWidget.prototype.destroy = function(input) {
-    input 
+    input
         .unbind('selectChoice')
         .yourlabsAutocomplete('destroy');
 }
@@ -181,7 +181,7 @@ $.fn.yourlabsTextWidget = function(overrides) {
         var dataOverrides = {
             autocompleteOptions: {
                 // workaround a display bug
-                minimumCharacters: 0,
+                minimumCharacters: 1,
                 getQuery: function() {
                     // Override getQuery since we need the autocomplete to filter
                     // choices based on the word the cursor is on, rather than the full
