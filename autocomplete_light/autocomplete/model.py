@@ -124,4 +124,8 @@ class AutocompleteModel(object):
         """
         Return True if all values where found in `choices`.
         """
-        return len(self.choices_for_values()) == len(self.values)
+        for item in self.choices_for_values():
+            if not((str(item.id) not in self.values) or (item.id not in self.values)):
+                return False
+
+        return True
