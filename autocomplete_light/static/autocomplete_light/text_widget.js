@@ -26,7 +26,10 @@ jQuery.fn.getSelectionStart = function(){
  
     var pos = input.value.length;
  
-    if (input.createTextRange) {
+    if(typeof(input.selectionStart)!="undefined") {
+        pos = input.selectionStart;
+    }
+    else if (input.createTextRange) {
         if (window.getSelection) {
             var r = window.getSelection(); //IE11
         } else {
@@ -36,8 +39,7 @@ jQuery.fn.getSelectionStart = function(){
         if (r.text == '')
             pos = input.value.length;
         pos = input.value.lastIndexOf(r.text);
-    } else if(typeof(input.selectionStart)!="undefined")
-    pos = input.selectionStart;
+    }
  
     return pos;
 }
