@@ -180,7 +180,6 @@ class TextWidget(forms.TextInput, WidgetBase):
     def __init__(self, autocomplete,
                  widget_js_attributes=None, autocomplete_js_attributes=None,
                  *args, **kwargs):
-
         forms.TextInput.__init__(self, *args, **kwargs)
 
         WidgetBase.__init__(self, autocomplete,

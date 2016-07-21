@@ -1,5 +1,5 @@
 import autocomplete_light
-from taggit.models import Tag
+from general.models import Topics
 
-autocomplete_light.register(Tag)
+autocomplete_light.register(Topics)
 

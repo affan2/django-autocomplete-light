@@ -25,8 +25,14 @@ from ..widgets import TextWidget
 class TagWidget(TextWidget):
     def render(self, name, value, attrs=None):
         if value is not None and not isinstance(value, basestring):
-            value = edit_string_for_tags(
-                [o.tag for o in value.select_related("tag")])
+            if name in'skills':
+                from people.models import UserSkills as Topics
+            else:
+                from articles.models import Topics
+            try:
+                value = edit_string_for_tags(Topics.objects.filter(id__in=[o for o in value]))
+            except TypeError:
+                value = edit_string_for_tags(Topics.objects.filter(id__in=[o.tag.id for o in value]))
         return super(TagWidget, self).render(name, value, attrs)
 
 
