@@ -1,4 +1,4 @@
-from django.core import urlresolvers
+from django.urls import reverse, NoReverseMatch
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.html import escape
 from django.utils.translation import ugettext_lazy as _
@@ -70,9 +70,8 @@ class AutocompleteInterface(object):
         autocomplete_light_autocomplete url.
         """
         try:
-            return urlresolvers.reverse('autocomplete_light_autocomplete',
-                args=(self.__class__.__name__,))
-        except urlresolvers.NoReverseMatch as e:
+            return reverse('autocomplete_light_autocomplete', args=(self.__class__.__name__,))
+        except NoReverseMatch as e:
             # Such error will ruin form rendering. It would be automatically
             # silenced because of e.silent_variable_failure=True, which is
             # something we don't want. Let's give the user a hint:
@@ -178,11 +177,11 @@ class AutocompleteBase(AutocompleteInterface):
         Return the value of a choice. This simple implementation returns the
         textual representation.
         """
-        return unicode(choice)
+        return choice
 
     def choice_label(self, choice):
         """
         Return the human-readable representation of a choice. This simple
         implementation returns the textual representation.
         """
-        return unicode(choice)
+        return choice

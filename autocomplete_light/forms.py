@@ -25,7 +25,7 @@ class FixedModelForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(FixedModelForm, self).__init__(*args, **kwargs)
 
-        msg = unicode(M)
+        msg = M
 
         for name, field in self.fields.items():
             widget = field.widget

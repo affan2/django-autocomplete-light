@@ -1,5 +1,4 @@
 from django.contrib.contenttypes.models import ContentType
-from django.db.models import Q
 
 from ..generic import GenericModelChoiceField
 
@@ -47,7 +46,7 @@ class AutocompleteGeneric(AutocompleteModel):
         assert self.choices, 'autocomplete.choices should be a queryset list'
 
         for value in self.values:
-            if not isinstance(value, basestring):
+            if not isinstance(value, str):
                 return False
 
             try:

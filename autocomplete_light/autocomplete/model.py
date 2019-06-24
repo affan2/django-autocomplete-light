@@ -39,7 +39,7 @@ class AutocompleteModel(object):
         """
         Return the unicode representation of the choice by default.
         """
-        return unicode(choice)
+        return choice
 
     def order_choices(self, choices):
         """
@@ -48,7 +48,7 @@ class AutocompleteModel(object):
         if self.order_by is None:
             return choices
 
-        if isinstance(self.order_by, basestring):
+        if isinstance(self.order_by, str):
             return choices.order_by(self.order_by)
 
         return choices.order_by(*self.order_by)

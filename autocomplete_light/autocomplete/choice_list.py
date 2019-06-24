@@ -4,7 +4,7 @@ __all__ = ('AutocompleteChoiceList',)
 
 
 class AutocompleteChoiceList(AutocompleteList):
-    order_by = lambda cls, choice: unicode(choice[1]).lower()
+    order_by = lambda cls, choice: choice[1].lower()
 
     def choices_for_values(self):
         values_choices = []
@@ -20,7 +20,7 @@ class AutocompleteChoiceList(AutocompleteList):
         q = self.request.GET.get('q', '').lower().strip()
 
         for choice in self.choices:
-            if q in unicode(choice[0]).lower() + unicode(choice[1]).lower():
+            if q in choice[0].lower() + choice[1].lower():
                 requests_choices.append(choice)
 
         return self.order_choices(requests_choices)[0:self.limit_choices]

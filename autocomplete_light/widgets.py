@@ -10,7 +10,7 @@ template.
 """
 
 from django import forms
-from django.forms.util import flatatt
+from django.forms.utils import flatatt
 from django.utils import safestring
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
@@ -34,7 +34,7 @@ class WidgetBase(object):
                  extra_context=None):
 
         self._autocomplete = None
-        if isinstance(autocomplete, basestring):
+        if isinstance(autocomplete, str):
             self.autocomplete_name = autocomplete
         else:
             self.autocomplete = autocomplete
@@ -54,7 +54,7 @@ class WidgetBase(object):
         else:
             self.autocomplete_js_attributes = autocomplete_js_attributes
 
-    def autocomplete():
+    def autocomplete(self):
         def fget(self):
             if not self._autocomplete:
                 from autocomplete_light import registry

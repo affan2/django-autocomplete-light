@@ -1,7 +1,6 @@
 from django import forms
 from django.db import models
 from django.forms import fields
-from django.contrib.contenttypes.generic import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 
 __all__ = ('GenericModelForm', 'GenericModelChoiceField')
@@ -66,7 +65,7 @@ class GenericModelChoiceField(fields.Field):
         Given a model instance as value, with content type id of 3 and pk of 5,
         return such a string '3-5'.
         """
-        if isinstance(value, (str, unicode)):
+        if isinstance(value, str):
             # Apparently there's a bug in django, that causes a python value to
             # be passed here. This ONLY happens when in an inline ....
             return value
