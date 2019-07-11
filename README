@@ -1,69 +1,51 @@
+.. image:: https://img.shields.io/pypi/dm/django-autocomplete-light.svg
+   :target: https://pypi.python.org/pypi/django-autocomplete-light
+.. image:: https://badge.fury.io/py/django-autocomplete-light.png
+   :target: http://badge.fury.io/py/django-autocomplete-light
 .. image:: https://secure.travis-ci.org/yourlabs/django-autocomplete-light.png?branch=master
     :target: http://travis-ci.org/yourlabs/django-autocomplete-light
-.. image:: https://pypip.in/d/django-autocomplete-light/badge.png
-    :target: https://crate.io/packages/django-autocomplete-light
-.. image:: https://pypip.in/v/django-autocomplete-light/badge.png   
-    :target: https://crate.io/packages/django-autocomplete-light
-.. image:: https://coveralls.io/repos/yourlabs/django-autocomplete-light/badge.png 
-    :target: https://coveralls.io/r/yourlabs/django-autocomplete-light
-
-django-autocomplete-light's purpose is to enable autocompletes quickly and
-properly in a django project: it is the fruit of **years of R&D**. It was
-designed for Django so that every part overridable or reusable independently.
-It is stable, tested, documented and fully supported: it tries to be a good
-neighbour in Django ecosystem.
+.. image:: https://codecov.io/github/yourlabs/django-autocomplete-light/coverage.svg?branch=master
+    :target: https://codecov.io/github/yourlabs/django-autocomplete-light?branch=master
 
 Features
 --------
 
-Features include:
+- Python 2.7, 3.4, Django 2.0+ support (Django 1.11 (LTS), is supported until django-autocomplete-light-3.2.10),
+- Django (multiple) choice support,
+- Django (multiple) model choice support,
+- Django generic foreign key support (through django-querysetsequence),
+- Django generic many to many relation support (through django-generic-m2m and
+  django-gm2m)
+- Multiple widget support: select2.js, easy to add more.
+- Creating choices that don't exist in the autocomplete,
+- Offering choices that depend on other fields in the form, in an elegant and
+  innovant way,
+- Dynamic widget creation (ie. inlines), supports YOUR custom scripts too,
+- Provides a test API for your awesome autocompletes, to support YOUR custom
+  use cases too,
+- A documented, automatically tested example for each use case in test_project.
 
-- charfield, foreign key, many to many autocomplete widgets,
-- generic foreign key, generic many to many autocomplete widgets,
-- remote API backed-autocompletes,
-- django template engine support for autocompletes, enabling you to include
-  images etc ...
-- 100% overridable HTML, CSS, Python and Javascript: there is no variable
-  hidden far down in the scope anywhere.
-- add-another popup supported outside the admin too.
-- keyboard is supported with enter, tab and
-  arrows by default.
+Upgrading
+---------
 
-Each feature has a live example and is fully documented. It is also designed
-and documented so that you create your own awesome features too.
+See `CHANGELOG <https://github.com/yourlabs/django-autocomplete-light/blob/master/CHANGELOG>`_..
 
-v2
---
-
-`v2 branch <https://github.com/yourlabs/django-autocomplete-light/tree/v2>`_ is
-under active development.
-
-You might want to use that instead, since it's much easier to work with and
-supports python3.
-
-In this case, please refer to the `v2 documentation
-<http://django-autocomplete-light.readthedocs.org/en/v2/>`_.
-
-**To upgrade to v2**, inherit from `autocomplete_light.ModelForm` and remove
-calls to `get_widgets_dict`. Optionnaly remove all old widget definitions.
+For v2 users and experts, a `blog post was published with plenty of details
+<http://blog.yourlabs.org/post/140477620808/django-autocomplete-light-v3-whats-going-on>`_.
 
 Resources
 ---------
 
-Resources include:
-
 - `**Documentation** graciously hosted
   <http://django-autocomplete-light.rtfd.org>`_ by `RTFD
   <http://rtfd.org>`_
-- `Live demo graciously hosted
-  <http://jpic.pythonanywhere.com/>`_ by `PythonAnywhere
-  <http://pythonanywhere.com/>`_,
 - `Video demo graciously hosted
   <http://youtu.be/fJIHiqWKUXI>`_ by `Youtube
   <http://youtube.com>`_,
 - `Mailing list graciously hosted
   <http://groups.google.com/group/yourlabs>`_ by `Google
   <http://groups.google.com>`_
+- For **Security** issues, please contact yourlabs-security@googlegroups.com
 - `Git graciously hosted
   <https://github.com/yourlabs/django-autocomplete-light/>`_ by `GitHub
   <http://github.com>`_,
@@ -73,3 +55,5 @@ Resources include:
 - `Continuous integration graciously hosted
   <http://travis-ci.org/yourlabs/django-autocomplete-light>`_ by `Travis-ci
   <http://travis-ci.org>`_
+- `**Online paid support** provided via HackHands
+  <https://hackhands.com/jpic/>`_,

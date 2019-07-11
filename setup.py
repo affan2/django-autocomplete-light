@@ -1,7 +1,6 @@
 import os
-import sys
 
-from setuptools import setup, find_packages, Command
+from setuptools import setup, find_packages
 
 
 # Utility function to read the README file.
@@ -11,73 +10,40 @@ from setuptools import setup, find_packages, Command
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-
-class RunTests(Command):
-    description = "Run the django test suite from the testproj dir."
-
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        this_dir = os.getcwd()
-        testproj_dir = os.path.join(this_dir, "test_project")
-        os.chdir(testproj_dir)
-        sys.path.append(testproj_dir)
-        from django.core.management import execute_from_command_line
-        os.environ["DJANGO_SETTINGS_MODULE"] = 'test_project.settings'
-        execute_from_command_line(argv=[ __file__, "test",
-                        "autocomplete_light"])
-        os.chdir(this_dir)
-
-if 'sdist' in sys.argv:
-    # clear compiled mo files before building the distribution
-    walk = os.walk(os.path.join(os.getcwd(), 'autocomplete_light/locale'))
-    for dirpath, dirnames, filenames in walk:
-        if not filenames:
-            continue
-
-        if 'django.mo' in filenames:
-            os.unlink(os.path.join(dirpath, 'django.mo'))
-else:
-    # if django is there, compile the po files to mo,
-    try:
-        import django
-    except ImportError:
-        pass
-    else:
-        dir = os.getcwd()
-        os.chdir(os.path.join(dir, 'autocomplete_light'))
-        os.system('django-admin.py compilemessages')
-        os.chdir(dir)
-
 setup(
     name='django-autocomplete-light',
-    version='1.4.13',
+    version='3.3.5',
     description='Fresh autocompletes for Django',
     author='James Pic',
     author_email='jamespic@gmail.com',
     url='http://django-autocomplete-light.rtfd.org',
-    packages=find_packages(),
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
     long_description=read('README'),
     license='MIT',
     keywords='django autocomplete',
-    cmdclass={'test': RunTests},
+    extras_require={
+        'nested': ['django-nested-admin'],
+        'tags': ['django-taggit'],
+        'genericm2m': ['django-generic-m2m'],
+        'gfk': ['django-querysetsequence>=0.11'],
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Framework :: Django',
+        'Framework :: Django :: 1.8',
+        'Framework :: Django :: 1.9',
+        'Framework :: Django :: 1.10',
+        'Framework :: Django :: 1.11',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]

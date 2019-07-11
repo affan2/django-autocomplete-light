@@ -9,3 +9,11 @@ django_autocomplete_light.egg-info/
 *swp
 docs/docs
 __pycache__
+test_env/
+.coverage
+.tox
+
+.cache/
+
+# Pycharm
+.idea/
