@@ -23,8 +23,6 @@ from better import better_theme_path
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "_ext")))
 sys.path.insert(0, os.path.abspath('../src/'))
-sys.path.append(
-    os.path.abspath(os.path.join(os.path.dirname(__file__), "../test_project")))
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 import django

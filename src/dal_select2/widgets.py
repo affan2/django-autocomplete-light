@@ -2,7 +2,7 @@
 
 from functools import lru_cache
 
-from dal.widgets import (
+from ..dal.widgets import (
     QuerySetSelectMixin,
     Select,
     SelectMultiple,

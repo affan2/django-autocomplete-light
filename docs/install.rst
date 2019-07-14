@@ -63,3 +63,4 @@ Install the demo project in a temporary virtualenv for testing purpose::
     ./manage.py createsuperuser
     ./manage.py runserver
     # go to http://localhost:8000/admin/ and login
+

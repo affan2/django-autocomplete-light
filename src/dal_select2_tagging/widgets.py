@@ -1,6 +1,6 @@
 """Widgets for Select2 and django-taggit."""
 
-from dal_select2.widgets import TagSelect2
+from ..dal_select2.widgets import TagSelect2
 
 from django import VERSION
 

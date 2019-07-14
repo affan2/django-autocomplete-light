@@ -1,6 +1,6 @@
 import json
 
-from dal import autocomplete
+from ...dal import autocomplete
 
 from django import test
 from django.contrib.auth.models import Group

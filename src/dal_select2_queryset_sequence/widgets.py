@@ -7,9 +7,9 @@ Select and SelectMultiple widgets, and are meant to be used with generic model
 form fields such as those in :py:mod:`dal_contenttypes`.
 """
 
-from dal_queryset_sequence.widgets import QuerySetSequenceSelectMixin
+from ..dal_queryset_sequence.widgets import QuerySetSequenceSelectMixin
 
-from dal_select2.widgets import Select2WidgetMixin
+from ..dal_select2.widgets import Select2WidgetMixin
 
 from django import forms
 

@@ -2,9 +2,9 @@
 from collections import OrderedDict
 from functools import reduce
 
-from dal_queryset_sequence.views import BaseQuerySetSequenceView
+from ..dal_queryset_sequence.views import BaseQuerySetSequenceView
 
-from dal_select2.views import Select2ViewMixin
+from ..dal_select2.views import Select2ViewMixin
 
 from django.db.models import Q
 from django.template.defaultfilters import capfirst

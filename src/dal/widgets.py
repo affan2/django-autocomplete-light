@@ -3,7 +3,7 @@
 import copy
 import json
 
-from dal import forward
+from ..dal import forward
 
 from django import VERSION
 from django import forms
