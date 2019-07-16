@@ -23,7 +23,7 @@ class Fixtures(object):
 
     def install_fixtures(self, model):
         """Install fixtures for model."""
-        for n in range(1, 50):
+        for n in list(range(1, 50)):
             try:
                 model.objects.get(pk=n)
             except model.DoesNotExist:
@@ -54,7 +54,7 @@ class OwnedFixtures(Fixtures):
 
             self.installed_auth = True
 
-        for n in range(1, 3):
+        for n in list(range(1, 3)):
             for u in [self.test, self.other]:
                 model.objects.get_or_create(
                     name='test #%s for %s' % (n, u),

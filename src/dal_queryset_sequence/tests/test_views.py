@@ -17,7 +17,7 @@ class Select2QuerySetSequenceViewTestCase(test.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        for i in range(0, 3):
+        for i in list(range(0, 3)):
             Group.objects.create(name='ViewTestCase%s' % i)
 
         cls.request = test.RequestFactory().get('?q=foo')
