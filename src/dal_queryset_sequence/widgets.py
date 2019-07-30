@@ -33,7 +33,7 @@ class QuerySetSequenceSelectMixin(WidgetMixin):
 
         self.choices = []
         ctype = ContentType.objects.get_for_id
-        for ctype_pk, ids in ctype_models.items():
+        for ctype_pk, ids in list(ctype_models.items()):
             results = ctype(ctype_pk).model_class().objects.filter(pk__in=ids)
 
             self.choices += [

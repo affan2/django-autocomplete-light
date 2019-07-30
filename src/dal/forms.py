@@ -79,7 +79,7 @@ class FutureModelForm(forms.ModelForm):
         """Override that uses a form field's ``value_from_object()``."""
         super(FutureModelForm, self).__init__(*args, **kwargs)
 
-        for name, field in self.fields.items():
+        for name, field in list(self.fields.items()):
             if not hasattr(field, 'value_from_object'):
                 continue
 
@@ -89,7 +89,7 @@ class FutureModelForm(forms.ModelForm):
         """Override that uses the form field's ``save_object_data()``."""
         super(FutureModelForm, self)._post_clean()
 
-        for name, field in self.fields.items():
+        for name, field in list(self.fields.items()):
             if not hasattr(field, 'save_object_data'):
                 continue
 
@@ -108,7 +108,7 @@ class FutureModelForm(forms.ModelForm):
 
         # Added to give the field a chance to do the work
         handled = []
-        for name, field in self.fields.items():
+        for name, field in list(self.fields.items()):
             if not hasattr(field, 'save_relation_data'):
                 continue
 
@@ -170,6 +170,6 @@ class FutureModelForm(forms.ModelForm):
         """
         return [
             value.as_url(cls)
-            for key, value in cls.__dict__['declared_fields'].items()
+            for key, value in list(cls.__dict__['declared_fields'].items())
             if hasattr(value.__class__, 'as_url')
         ]  # checks if its the right object

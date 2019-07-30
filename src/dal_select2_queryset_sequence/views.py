@@ -55,7 +55,7 @@ class Select2QuerySetSequenceView(BaseQuerySetSequenceView, Select2ViewMixin):
                 'id': self.get_result_value(result),
                 'text': six.text_type(result),
             } for result in results]
-        } for model, results in groups.items()]
+        } for model, results in list(groups.items())]
 
 
 class Select2QuerySetSequenceAutoView(Select2QuerySetSequenceView):
