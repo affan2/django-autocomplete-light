@@ -1,6 +1,6 @@
 """Autocomplete fields for QuerySetSequence choices."""
 
-from ..dal_contenttypes.fields import (
+from dal_contenttypes.fields import (
     ContentTypeModelMultipleFieldMixin,
     GenericModelMixin,
 )

@@ -1,6 +1,6 @@
 """View that supports QuerySetSequence."""
 
-from ..dal.views import BaseQuerySetView
+from dal.views import BaseQuerySetView
 
 from django.contrib.contenttypes.models import ContentType
 

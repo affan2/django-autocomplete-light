@@ -1,9 +1,9 @@
 """Autocomplete fields for Select2GenericForeignKey choices."""
 
-from ..dal_queryset_sequence.fields import QuerySetSequenceModelField
+from dal_queryset_sequence.fields import QuerySetSequenceModelField
 
-from ..dal_select2_queryset_sequence.views import Select2QuerySetSequenceAutoView
-from ..dal_select2_queryset_sequence.widgets import QuerySetSequenceSelect2
+from dal_select2_queryset_sequence.views import Select2QuerySetSequenceAutoView
+from dal_select2_queryset_sequence.widgets import QuerySetSequenceSelect2
 
 from django.conf.urls import url
 

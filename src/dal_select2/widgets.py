@@ -2,7 +2,7 @@
 
 from functools import lru_cache
 
-from ..dal.widgets import (
+from dal.widgets import (
     QuerySetSelectMixin,
     Select,
     SelectMultiple,
@@ -11,7 +11,6 @@ from ..dal.widgets import (
 
 from django import forms
 from django.conf import settings
-from django.contrib.auth import get_user_model
 try:
     # SELECT2_TRANSLATIONS is Django 2.x only
     from django.contrib.admin.widgets import SELECT2_TRANSLATIONS
