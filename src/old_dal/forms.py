@@ -73,7 +73,7 @@ def get_widgets_dict(model, autocomplete_exclude=None, registry=None):
         if not isinstance(field, (ForeignKey, OneToOneField)):
             continue
 
-        autocomplete = registry.autocomplete_for_model(field.rel.to)
+        autocomplete = registry.autocomplete_for_model(field.related_model)
         if not autocomplete:
             continue
 
@@ -83,7 +83,7 @@ def get_widgets_dict(model, autocomplete_exclude=None, registry=None):
         if field.name in autocomplete_exclude:
             continue
 
-        autocomplete = registry.autocomplete_for_model(field.rel.to)
+        autocomplete = registry.autocomplete_for_model(field.related_model)
         if not autocomplete:
             continue
 
