@@ -68,7 +68,9 @@ class WidgetBase(object):
             self.autocomplete_name = value.__class__.__name__
 
         return {'fget': fget, 'fset': fset}
-    autocomplete = property(**autocomplete())
+    # autocomplete() needs self to be passed to it, but cannot as it has none defined.
+    # None for now, what else instead?
+    autocomplete = property(**autocomplete(self=None))
 
     def process_js_attributes(self):
         extra_autocomplete_js_attributes = getattr(self.autocomplete,

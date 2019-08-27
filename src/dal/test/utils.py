@@ -1,5 +1,7 @@
 """Utils for testing autocompletes."""
 from django.apps import apps
+from django.conf import settings
+from django.contrib.auth import get_user_model
 
 
 class Fixtures(object):
@@ -38,9 +40,9 @@ class OwnedFixtures(Fixtures):
     def install_fixtures(self, model):
         """Install owners and fixtures."""
         if not self.installed_auth:
-            User = apps.get_model('auth.user')  # noqa
+            get_user_model() = apps.get_model('auth.user')  # noqa
 
-            self.test, c = User.objects.get_or_create(
+            self.test, c = get_user_model().objects.get_or_create(
                 username='test',
                 is_staff=True,
                 is_superuser=True
@@ -48,7 +50,7 @@ class OwnedFixtures(Fixtures):
             self.test.set_password('test')
             self.test.save()
 
-            self.other, c = User.objects.get_or_create(username='other')
+            self.other, c = get_user_model().objects.get_or_create(username='other')
             self.other.set_password('test')
             self.other.save()
 
