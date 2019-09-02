@@ -40,7 +40,7 @@ class OwnedFixtures(Fixtures):
     def install_fixtures(self, model):
         """Install owners and fixtures."""
         if not self.installed_auth:
-            get_user_model() = apps.get_model('auth.user')  # noqa
+            user = apps.get_model('auth.user')  # noqa
 
             self.test, c = get_user_model().objects.get_or_create(
                 username='test',
