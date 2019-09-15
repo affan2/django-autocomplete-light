@@ -75,7 +75,7 @@ Create a :django:label:`named url<naming-url-patterns>` for the view, ie:
     from your_countries_app.views import CountryAutocomplete
 
     urlpatterns = [
-        url(
+        re_path
             r'^country-autocomplete/$',
             CountryAutocomplete.as_view(),
             name='country-autocomplete',
@@ -356,7 +356,7 @@ the autocomplete user interface, ie:
 .. code-block:: python
 
     urlpatterns = [
-        url(
+        re_path
             r'^country-autocomplete/$',
             CountryAutocomplete.as_view(create_field='name'),
             name='country-autocomplete',
