@@ -104,7 +104,7 @@ class BaseQuerySetView(ViewMixin, BaseListView):
     def has_add_permission(self, request):
         """Return True if the user has the permission to add a model."""
         if django.VERSION < (2, 0, 0):
-            auth = request.user.is_authenticated()
+            auth = request.user.is_authenticated
         else:
             auth = request.user.is_authenticated
 
